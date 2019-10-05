@@ -10,8 +10,9 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header("Content-type", "text/html")
         self.end_headers()
 
-        response = ""
-        self.wfile.write(response.encode("utf-8"))
+        f = open("index.html")
+        self.wfile.write(f.read().encode("utf-8"))
+        f.close()
 
         return
 
